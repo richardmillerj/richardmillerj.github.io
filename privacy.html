@@ -1,2 +1,430 @@
-<H1>The Anagrind</H1>
-<H2>Privacy Policy</H2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — The Anagrind</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Serif+Display:ital@0;1&display=swap');
+
+        :root {
+            --bg: #0f0e17;
+            --surface: #1a1828;
+            --border: #2a2840;
+            --red: #ff6b6b;
+            --amber: #ffb347;
+            --white: #fffffe;
+            --muted: #a7a9be;
+            --dim: #6b6a8a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            background: var(--bg);
+            color: var(--white);
+            font-family: 'DM Mono', monospace;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        body {
+            min-height: 100vh;
+            background: var(--bg);
+            background-image: radial-gradient(circle at 20% 20%, rgba(255,107,107,0.04) 0%, transparent 50%),
+                              radial-gradient(circle at 80% 80%, rgba(255,179,71,0.03) 0%, transparent 50%);
+        }
+
+        /* Dot grid */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+            background-size: 28px 28px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 60px 24px 80px;
+        }
+
+        /* Header */
+        .site-header {
+            margin-bottom: 56px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .app-label {
+            font-size: 10px;
+            letter-spacing: 4px;
+            color: var(--red);
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .app-name {
+            font-family: 'DM Serif Display', serif;
+            font-size: 32px;
+            color: var(--white);
+            margin-bottom: 4px;
+        }
+
+        .app-tagline {
+            font-size: 12px;
+            color: var(--muted);
+            font-style: italic;
+        }
+
+        /* Page title */
+        .page-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: 42px;
+            color: var(--white);
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .page-subtitle {
+            font-size: 13px;
+            color: var(--muted);
+            margin-bottom: 48px;
+        }
+
+        .last-updated {
+            display: inline-block;
+            font-size: 11px;
+            color: var(--dim);
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 4px 12px;
+            margin-bottom: 48px;
+        }
+
+        /* Summary card */
+        .summary-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--red);
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin-bottom: 48px;
+        }
+
+        .summary-card .card-label {
+            font-size: 10px;
+            letter-spacing: 3px;
+            color: var(--red);
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .summary-card p {
+            font-size: 14px;
+            color: var(--muted);
+            line-height: 1.8;
+        }
+
+        .summary-card strong {
+            color: var(--white);
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section:last-of-type {
+            border-bottom: none;
+        }
+
+        .section-number {
+            font-size: 11px;
+            color: var(--red);
+            letter-spacing: 2px;
+            margin-bottom: 6px;
+        }
+
+        .section h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 22px;
+            color: var(--white);
+            margin-bottom: 16px;
+            font-weight: normal;
+        }
+
+        .section p {
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 1.9;
+            margin-bottom: 12px;
+        }
+
+        .section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .section strong {
+            color: var(--white);
+        }
+
+        /* Highlight row */
+        .highlight-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            background: rgba(255,107,107,0.05);
+            border: 1px solid rgba(255,107,107,0.15);
+            border-radius: 8px;
+            padding: 14px 16px;
+            margin-bottom: 12px;
+        }
+
+        .highlight-row .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--red);
+            margin-top: 7px;
+            flex-shrink: 0;
+        }
+
+        .highlight-row p {
+            margin: 0;
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        /* Contact */
+        .contact-link {
+            color: var(--amber);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255,179,71,0.3);
+            transition: border-color 0.2s;
+        }
+
+        .contact-link:hover {
+            border-color: var(--amber);
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 64px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: gap;
+            gap: 12px;
+        }
+
+        .footer-left {
+            font-size: 11px;
+            color: var(--dim);
+        }
+
+        .footer-right {
+            font-size: 11px;
+            color: var(--dim);
+        }
+
+        .footer a {
+            color: var(--muted);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: var(--red);
+        }
+
+        @media (max-width: 480px) {
+            .page-title { font-size: 32px; }
+            .container { padding: 40px 20px 60px; }
+            .footer { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- Header -->
+        <header class="site-header">
+            <div class="app-label">Cryptic Crossword</div>
+            <div class="app-name">The Anagrind</div>
+            <div class="app-tagline">For solvers who do their own work.</div>
+        </header>
+
+        <!-- Page title -->
+        <h1 class="page-title">Privacy Policy</h1>
+        <p class="page-subtitle">How we handle your data — or rather, how we don't.</p>
+        <span class="last-updated">Last updated: March 2026</span>
+
+        <!-- Summary card -->
+        <div class="summary-card">
+            <div class="card-label">Plain English Summary</div>
+            <p>
+                <strong>The Anagrind collects no personal data whatsoever.</strong>
+                Everything you do in the app — your clue boards, saved crosswords, 
+                purchase status — stays entirely on your device. We have no servers, 
+                no accounts, no analytics, and no way to identify you. 
+                This policy exists because Apple requires one, not because we have 
+                anything meaningful to disclose.
+            </p>
+        </div>
+
+        <!-- Sections -->
+        <div class="section">
+            <div class="section-number">01</div>
+            <h2>Information We Collect</h2>
+            <p>None.</p>
+            <p>
+                The Anagrind does not collect, store, transmit or process any 
+                personal information. We do not ask for your name, email address, 
+                location, or any other identifying information. There is no account 
+                creation, no login, and no user profile of any kind.
+            </p>
+        </div>
+
+        <div class="section">
+            <div class="section-number">02</div>
+            <h2>Data Stored on Your Device</h2>
+            <p>
+                The only data The Anagrind stores is the data you create — your 
+                clue boards, crossword sessions, and solving progress. This data 
+                is stored locally on your device using standard iOS storage 
+                mechanisms and never leaves your device.
+            </p>
+            <p>
+                You can delete all app data at any time by deleting the app 
+                from your device.
+            </p>
+        </div>
+
+        <div class="section">
+            <div class="section-number">03</div>
+            <h2>In-App Purchases</h2>
+            <p>
+                The Anagrind offers an optional one-time Pro upgrade via Apple's 
+                in-app purchase system. All payment processing is handled entirely 
+                by Apple. We do not receive, store or process any payment 
+                information. Your purchase is managed through your Apple ID and 
+                is subject to 
+                <a href="https://www.apple.com/legal/privacy/" class="contact-link" target="_blank">Apple's Privacy Policy</a>.
+            </p>
+            <p>
+                Your purchase status is verified locally on your device via 
+                Apple's StoreKit framework. We have no record of whether you 
+                have purchased the Pro upgrade.
+            </p>
+        </div>
+
+        <div class="section">
+            <div class="section-number">04</div>
+            <h2>Analytics &amp; Tracking</h2>
+
+            <div class="highlight-row">
+                <div class="dot"></div>
+                <p>No analytics tools or SDKs are included in The Anagrind.</p>
+            </div>
+            <div class="highlight-row">
+                <div class="dot"></div>
+                <p>No crash reporting services that transmit data to third parties.</p>
+            </div>
+            <div class="highlight-row">
+                <div class="dot"></div>
+                <p>No advertising networks or tracking pixels of any kind.</p>
+            </div>
+            <div class="highlight-row">
+                <div class="dot"></div>
+                <p>No use of device identifiers, advertising IDs or fingerprinting.</p>
+            </div>
+
+            <p>
+                Apple may collect anonymised, aggregated usage data through the 
+                App Store and iOS platform itself. This is governed by 
+                <a href="https://www.apple.com/legal/privacy/" class="contact-link" target="_blank">Apple's Privacy Policy</a> 
+                and is not within our control.
+            </p>
+        </div>
+
+        <div class="section">
+            <div class="section-number">05</div>
+            <h2>Third Party Services</h2>
+            <p>
+                The Anagrind does not integrate with any third party services, 
+                APIs, or SDKs other than Apple's own iOS frameworks (StoreKit 
+                for purchases, standard iOS storage for local data). No data 
+                is shared with any third party under any circumstances.
+            </p>
+        </div>
+
+        <div class="section">
+            <div class="section-number">06</div>
+            <h2>Children's Privacy</h2>
+            <p>
+                The Anagrind is rated 4+ on the App Store and is appropriate 
+                for all ages. Since we collect no personal data from anyone, 
+                there are no special provisions required for users under 13. 
+                We comply fully with the Children's Online Privacy Protection 
+                Act (COPPA) and equivalent international regulations.
+            </p>
+        </div>
+
+        <div class="section">
+            <div class="section-number">07</div>
+            <h2>Changes to This Policy</h2>
+            <p>
+                If we ever change how The Anagrind handles data — which would 
+                require a significant change to the app's architecture — we will 
+                update this page and revise the "Last updated" date above. 
+                Continued use of the app following any changes constitutes 
+                acceptance of the revised policy.
+            </p>
+            <p>
+                Given the nature of this app, we do not anticipate any 
+                meaningful changes to this policy.
+            </p>
+        </div>
+
+        <div class="section">
+            <div class="section-number">08</div>
+            <h2>Contact</h2>
+            <p>
+                If you have any questions about this privacy policy or The 
+                Anagrind in general, you can reach us at 
+                <a href="mailto:privacy@theanagrind.app" class="contact-link">privacy@theanagrind.app</a>.
+            </p>
+            <p>
+                Given that we collect no data, there is nothing to request, 
+                correct or delete — but we're happy to answer any questions 
+                you may have.
+            </p>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-left">
+                © 2026 The Anagrind. All rights reserved.
+            </div>
+            <div class="footer-right">
+                <a href="https://theanagrind.app">theanagrind.app</a>
+            </div>
+        </footer>
+
+    </div>
+</body>
+</html>
