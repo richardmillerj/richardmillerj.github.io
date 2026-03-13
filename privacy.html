@@ -55,36 +55,50 @@
             z-index: 1;
             max-width: 680px;
             margin: 0 auto;
-            padding: 60px 24px 80px;
+            padding: 100px 24px 80px;
         }
 
-        /* Header */
-        .site-header {
-            margin-bottom: 56px;
-            padding-bottom: 32px;
+        /* ─── NAV ─── */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 32px;
+            background: rgba(15,14,23,0.85);
+            backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border);
         }
 
-        .app-label {
-            font-size: 10px;
-            letter-spacing: 4px;
-            color: var(--red);
-            text-transform: uppercase;
-            margin-bottom: 8px;
-        }
-
-        .app-name {
+        .nav-logo {
             font-family: 'DM Serif Display', serif;
-            font-size: 32px;
+            font-size: 20px;
             color: var(--white);
-            margin-bottom: 4px;
+            text-decoration: none;
         }
 
-        .app-tagline {
+        .nav-logo span {
+            color: var(--red);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .nav-links a {
             font-size: 12px;
             color: var(--muted);
-            font-style: italic;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            transition: color 0.2s;
         }
+
+        .nav-links a:hover { color: var(--white); }
+        .nav-links a.active { color: var(--white); }
 
         /* Page title */
         .page-title {
@@ -259,16 +273,19 @@
     </style>
 </head>
 <body>
+
+    <!-- Nav -->
+    <nav>
+        <a href="/" class="nav-logo">The <span>Anagrind</span></a>
+        <div class="nav-links">
+            <a href="https://theanagrind.app/#how-it-works">How it works</a>
+            <a href="https://theanagrind.app/#pro">Pro</a>
+            <a href="https://theanagrind.app/#support">Support</a>
+            <a href="#" class="active">Privacy</a>
+        </div>
+    </nav>
+
     <div class="container">
-
-        <!-- Header -->
-        <header class="site-header">
-            <div class="app-label">Cryptic Crossword</div>
-            <div class="app-name">The Anagrind</div>
-            <div class="app-tagline">For solvers who do their own work.</div>
-        </header>
-
-        <!-- Page title -->
         <h1 class="page-title">Privacy Policy</h1>
         <p class="page-subtitle">How we handle your data — or rather, how we don't.</p>
         <span class="last-updated">Last updated: March 2026</span>
@@ -406,7 +423,7 @@
             <p>
                 If you have any questions about this privacy policy or The 
                 Anagrind in general, you can reach us at 
-                <a href="mailto:privacy@theanagrind.app" class="contact-link">privacy@theanagrind.app</a>.
+                <a href="/cdn-cgi/l/email-protection#1262607b6473716b52667a77737c7375607b7c763c736262" class="contact-link"><span class="__cf_email__" data-cfemail="5222203b2433312b12263a37333c3335203b3c367c332222">[email&#160;protected]</span></a>.
             </p>
             <p>
                 Given that we collect no data, there is nothing to request, 
@@ -420,11 +437,4 @@
             <div class="footer-left">
                 © 2026 The Anagrind. All rights reserved.
             </div>
-            <div class="footer-right">
-                <a href="https://theanagrind.app">theanagrind.app</a>
-            </div>
-        </footer>
-
-    </div>
-</body>
-</html>
+            <div class="footer-
